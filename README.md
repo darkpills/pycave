@@ -5,7 +5,7 @@ Simple tool to find code caves in Portable Executable (PE) files.
 
 ## Description
 
-This tool is inspired by [Cminer](https://github.com/EgeBalci/Cminer) and aims to find code caves in PE files.
+This tool is forked from [](https://github.com/axcheron/pycave) and inspired by [Cminer](https://github.com/EgeBalci/Cminer). It aims to find code caves in PE files.
 
 ## Requirements
 
@@ -23,12 +23,12 @@ $ pip3 install pefile
 
 ## Install
 
-Checkout the source: `git clone https://github.com/axcheron/pycave.git`
+Checkout the source: `git clone https://github.com/darkpills/pycave.git`
 
 ## Getting Started
 
 ```bash
-usage: pycave.py [-h] -f FILE_NAME [-s SIZE] [-b BASE]
+usage: pycave.py [-h] -f FILE_NAME [-s SIZE] [-b LOOKUPBYTE] [-i IMAGEBASE]
 
 Find code caves in PE files
 
@@ -37,7 +37,10 @@ optional arguments:
   -f FILE_NAME, --file FILE_NAME
                         PE file
   -s SIZE, --size SIZE  Min. cave size
-  -b BASE, --base BASE  Image base
+  -b LOOKUPBYTE, --byte LOOKUPBYTE
+                        Lookup byte in cave, format 0x00
+  -i IMAGEBASE, --image-base IMAGEBASE
+                        Image base
 
 $ python pycave.py -f putty.exe -s 200
 [+] Minimum code cave size: 200
